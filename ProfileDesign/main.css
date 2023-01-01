@@ -1,0 +1,94 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:90vh
+}
+section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap:1rem;
+    width:90%;
+}
+.text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding:1rem;
+    width:70%;
+
+}
+.text button{
+    border:2px solid rgb(127, 237, 247);
+    padding:.5rem 1rem;
+    cursor:pointer;
+    border-radius:5px;
+    background-color: rgb(255, 255, 255);
+    animation: slideINDown 1s forwards;
+}
+.text button:hover{
+    background-color: rgb(190, 244, 236);
+}
+.text h4{
+    width:100%;
+    padding:0px;
+    margin:0px;
+    border-bottom:5px solid rgb(238, 238, 238);
+    animation: slideINUp 1s forwards;
+}
+.text p{
+    width:350px;
+    animation: slideINLeft 1s forwards;
+}
+.image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:1rem;
+    width:40%;
+    margin-left:auto;
+    border:3px solid rgb(235, 235, 235);
+    box-shadow: 1px 1px 8px 1px rgb(154, 154, 154);
+    animation: slideINRight 1s forwards;
+}
+.image img{
+    width:240px
+}
+
+@keyframes slideINLeft {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+@keyframes slideINRight {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+
+@keyframes slideINDown {
+    0%{
+        transform: translateY(200%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+@keyframes slideINUp {
+    0%{
+        transform: translateY(-200%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}

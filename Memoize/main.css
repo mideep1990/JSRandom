@@ -1,0 +1,69 @@
+body{
+    margin:0 auto;
+}
+section:nth-child(1),
+section:nth-child(3){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: aqua;
+}
+section:nth-child(2){
+    height:610px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.major{
+   min-width:670px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   padding:2%;
+   background-color: antiquewhite;
+}
+.major div{
+   font-size:22px;
+   display: flex;
+   flex-direction: row;
+   padding:3%;
+   justify-content: flex-start;
+}
+section:nth-child(2) div button{
+    font-size:21px;
+    padding:10px;
+    width:100%
+}
+section:nth-child(2) div span:nth-child(2)
+{
+    font-weight: bold;
+    color:red
+}
+section:nth-child(1) div:nth-child(1){
+    margin-left:10px;
+}
+section:nth-child(1) div:nth-child(2)
+{
+    margin-left:auto;
+    margin-right:10px;
+    margin-top:10px;
+    margin-bottom: 10px;
+}
+section:nth-child(1) h3,
+section:nth-child(1) h4,
+section:nth-child(1) h5,
+section:nth-child(1) h6{
+    margin:0px
+}
+
+input{
+    padding:2%
+}
+
+.cc_datePicker{
+    display: flex;
+    flex-direction: column !important;
+}
+

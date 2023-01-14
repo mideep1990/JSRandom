@@ -1,79 +1,126 @@
-/* Javascript Async */
+/* Javascript Async 
+Sample GET https://api.publicapis.org/entries
+1 - Async Vs Sync
+2 - CallBack
+2 - Promises
+3 - Async Await
+*/
+//Async vs Sync
 
-
-const EvenOddService = (num) => {
-   return new Promise((resolve,reject) => {
-    console.log("Number to be tested : ",num)
-    if(num % 2 === 0)
-    {
-      resolve("Resolved -> Even Number : "+num)
-    }
-    else 
-    {
-      reject("Rejected -> Odd Number : "+num)
-    }
-   })
+function cal(a,b)
+{
+  console.log("A : "+a+" B : "+b)
+  return a+b;
+}
+function calInp()
+{
+  console.log("Calculating...")
+}
+function print(res)
+{
+  console.log("Result : ",res)
+}
+let res = cal(4,5)
+setTimeout(function test(){
+  calInp()
+},5000)
+print(res)
+for(let i =0;i<10000;i++)
+{
+  console.log("Waiting...")
 }
 
-const calculate = (num) => {
-   console.log("Doing the calculation")
-   return new Promise((resolve,reject)=> {
-    if(num/2 >= 1)
-    {
-      resolve(num/2)
-    }
-    else{
-      reject("Rejected : -1")
-    }
-   });
+
+//Call back
+
+function calculate(a,b,callBack)
+{
+   let res = a + b;
+   callBack(res)
 }
 
-const display = (num) => {
-  console.log("Display Msg Forming")
-  return new Promise((resolve,reject)=> {
-    resolve("Final Result : "+num)
+function print(res)
+{
+  console.log("Result : ",res)
+}
+
+calculate(3,4,print)
+
+
+//PROMISES
+const calculate = (a,b) => {
+  return new Promise((resolve,reject) => {
+    if(b !== 0)
+    {
+      resolve(a/b)
+    }
+    else
+    {
+      reject("Can not divide /Zero")
+    }
   })
-
 }
 
-let __num = 23;
-EvenOddService(__num).then(resp1 => {
-  console.log("Response From EvenOddService : ",resp1);
-  return calculate(__num)
-}).then(resp2 => {
-  console.log("Response From Calculate : ",resp2)
-  return display(resp2)
-}).then(resp3 => {
-  console.log("Response Form Display : ",resp3)
-}).catch(err => {
-  console.log("Catch : ",err)
-}).finally(() => {
-   console.log("-----------------Finished-------------------")
-})
+const formulaCal = (c) => {
+  return new Promise((resolve,reject) => {
+    if(c>0)
+       resolve(c*3.14+78)
+    else
+       reject("Zero is not acceptable!!!")
+  })
+}
 
-const callMethods = async () => {
+
+calculate(4,2)
+.then(resp => {
+  console.log(resp)
+  return formulaCal(resp)
+}).then(resp2 => {
+  console.log(resp2)
+})
+.catch(err => console.error(err))
+
+//Async Await
+
+const callFun = async () => {
   try{
-  let __num = 33;
-  let resp1 = await EvenOddService(__num)
-  console.log("From EvenOddService : ",resp1)
-  let resp2 = await calculate(__num)
-  console.log("From calculate : ",resp2)
-  let resp3 = await display(__num)
-  console.log("From display : ",resp3)
+   const resp = await calculate(4,2);
+   const resp2 = await formulaCal(resp)
+   console.log(resp)
+   console.log(resp2)
   }
   catch(err)
   {
-    console.log("Catch : ",err)
+    console.error("Error : ",err);
   }
 }
 
-(() => 
-{
-  console.log("Step 1 - Printing...")
-  console.log("Step 2 - Printing...")
-  callMethods()
-  console.log("Step 3 - Printing...")
-})();
+callFun()
 
 
+//With Fetch API Promise + Callback
+ 
+const apiFun = (CallBack) => {
+  fetch("https://api.publicapis.org/entries")
+  .then(resp => resp.json())
+  .then(respCallBack => CallBack(respCallBack))
+}
+
+const dataProcessor = (data) => {
+  console.log("Data : ",data)
+}
+
+apiFun(dataProcessor)
+
+
+//With Fetch API Async + Await
+
+const apiFun2 = async () => {
+  const resp = 
+  await fetch("https://api.publicapis.org/entries")
+  const resp_json = await resp.json();
+  console.log("Response : ",resp_json)
+}
+
+apiFun2()
 

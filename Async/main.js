@@ -48,7 +48,7 @@ calculate(3,4,print)
 
 
 //PROMISES
-const calculate = (a,b) => {
+const calculateData = (a,b) => {
   return new Promise((resolve,reject) => {
     if(b !== 0)
     {
@@ -71,7 +71,7 @@ const formulaCal = (c) => {
 }
 
 
-calculate(4,2)
+calculateData(4,2)
 .then(resp => {
   console.log(resp)
   return formulaCal(resp)

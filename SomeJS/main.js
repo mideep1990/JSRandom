@@ -1,8 +1,45 @@
-function check(a=1,b)
+/*Pass By Value Vs 
+Pass By Reference 
+in javascript*/
+
+/*var a = 20
+function update(temp)
 {
-    console.log("a : ",a)
-    console.log("b : ",b)
-    console.log("a X b = ",a*b)
+    temp = 30
 }
 
-check(4);
+update(a)
+console.log(a)
+
+
+
+
+
+
+
+var a = [20]
+function update(temp)
+{
+    temp[0] = 30
+}
+
+update(a)
+console.log(a)*/
+
+
+
+
+
+
+
+
+
+var a = {val : 20}
+function update(temp)
+{
+    temp.val = 30
+}
+
+update(a)
+console.log(a)
+

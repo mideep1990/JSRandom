@@ -7,40 +7,37 @@ body{
 .bounce{
     color:white;
     font-size:4rem;
-    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 250px;
 }
-.bouncing {
-    animation : 
-    rubberband 
-    800ms 
-    alternate 
-    ease-out;
-  }
+/*For Animation*/
+.bouncing{
+    animation : bouncinganimation
+    800ms
+    alternate
+    ease-in-out;
+}
 
-  @keyframes rubberband {
+/*Frames*/
+@keyframes bouncinganimation {
     0%{
         transform: scaleX(1);
     }
-    40%{
-        transform: scaleX(1.12) scaleY(0.75);
+    45%{
+        transform: scaleX(1.1) scaleY(.8);
     }
-    55%{
-        transform: scaleX(0.85) scaleY(1);
+    60%{
+        transform: scaleX(.8) scaleY(1);
     }
-    65%{
-        transform: scaleX(1.09) scaleY(0.85);
+    70%{
+        transform: scaleX(1.1) scaleY(.8);
     }
-    75%{
-        transform: scaleX(0.9)  scaleY(1);
-    }
-    90%{
-        transform: scaleX(1.05) scaleY(0.95);
+    80%{
+        transform: scaleX(1.05) scaleY(.9);
     }
     100%{
         transform: scaleX(1) scaleY(1);
     }
 }
-

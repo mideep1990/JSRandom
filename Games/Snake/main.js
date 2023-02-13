@@ -1,105 +1,111 @@
-var blockSize = 25;
-var rows = 20;
-var cols = 20;
-var board;
-var context;
-var snakeX = blockSize * 5;
-var snakeY = blockSize * 5;
-var foodX;
-var foodY;
-var velocityX = 0;
-var velocityY = 0;
-var snakeBody = [];
-var gameOver = false;
-
-window.onload = function() {
-    board = document.getElementById("board");
-    board.height = rows * blockSize;
-    board.width = cols * blockSize;
-    context = board.getContext("2d");
-    placeFood()
-    document.addEventListener('keyup',changeDirection)
-    update()
-    setInterval(update,100)
+var __canvas;
+var __square=25;
+var rows = 20,cols = 20;
+var ctx;
+var counter = 0;
+var food = {x : 0,y : 0}
+var snakeX = 5 * __square
+var snakeY = 5 * __square
+var snake = []
+var move = {x:0,y:0}
+window.onload = function(){
+    __canvas = document.getElementById("Gameboard")
+    __canvas.width = __square * cols
+    __canvas.height = __square * rows
+    ctx = __canvas.getContext("2d")
+    foodCO()
+    document.addEventListener('keyup',motion)
+    updateCanvas()
+    setInterval(updateCanvas,100)
 }
 
-function update()
+function updateCanvas()
 {
-    if(gameOver)
+    //console.log('updating canvas...',counter++)
+    //Creating Canvas
+    //console.log(snake)
+    if(counter>2000)
     {
-        return;
+        return
     }
-    context.fillStyle="black";
-    context.fillRect(0,0,board.width,board.height)
-    context.fillStyle = "red";
-    context.fillRect(foodX,foodY,blockSize,blockSize)
-    if(snakeX == foodX && snakeY == foodY)
+    ctx.fillStyle = 'black'
+    ctx.fillRect(0,0,__canvas.width,__canvas.height)
+    //Create the food
+    ctx.fillStyle = 'red'
+    ctx.fillRect(food.x ,food.y ,__square,__square)
+    //Create a snake
+    //If snake eats grow
+    if(snakeX == food.x  && snakeY == food.y )
     {
-        snakeBody.push([foodX,foodY])
-        placeFood()
+        console.log("pushing",JSON.stringify(food))
+        snake.push({x:food.x,y:food.y})
+        foodCO()
     }
-
-    for(let i = snakeBody.length - 1;i>0;i--)
+    //Attch tail to head
+    for(let i=snake.length-1;i>0;i--)
     {
-        snakeBody[i] = snakeBody[i-1]
-    }
-
-    if(snakeBody.length)
-    {
-        snakeBody[0] = [snakeX,snakeY]
-    }
-
-    context.fillStyle = "lime";
-    snakeX += velocityX * blockSize;
-    snakeY += velocityY * blockSize;
-    context.fillRect(snakeX,snakeY,blockSize,blockSize)
-    for(let i = 0;i<snakeBody.length;i++)
-    {
-        context.fillRect(snakeBody[i][0],snakeBody[i][1],blockSize,blockSize)
+        snake[i] = snake[i-1]
     }
 
-    if(snakeX<0 || snakeX >cols * blockSize || snakeY<0 || snakeY > rows * blockSize)
+    if(snake.length)
     {
-        gameOver = true;
-        alert("END")
+        snake[0] = {x:snakeX,y:snakeY}
     }
-    for(let i=0;i<snakeBody.length;i++)
+    counter++;
+    console.log(" - ",counter)
+    console.log("S - ",snakeX)
+    console.log("S - ",snakeY)
+    console.log("S - ",JSON.stringify(snake))
+    console.log("F - ",food)
+    //Show Snake
+    snakeX += move.x * __square
+    snakeY += move.y * __square
+    ctx.fillStyle = 'cyan'
+    ctx.fillRect(snakeX , snakeY ,__square,__square)
+    
+    for(let i = 0;i<snake.length;i++)
     {
-        if(snakeX == snakeBody[i][0] && snakeY == snakeBody[i][1])
-        {
-            gameOver = true;
-            alert("END")
-        }
+        ctx.fillStyle = 'blue'
+        ctx.fillRect((snake[i].x),(snake[i].y),__square,__square)
     }
+
+    //Kill Snake
+    
 }
 
-function placeFood()
-{ 
-    foodX = Math.floor(Math.random() * cols) * blockSize;
-    foodY = Math.floor(Math.random() * rows) * blockSize;
-}
-
-function changeDirection(e)
+function motion(e)
 {
-    console.log(e)
-    if(e.code =="ArrowUp" && velocityY !=1)
+    if(e.code === 'ArrowUp' && move.y != 1)
     {
-        velocityX = 0;
-        velocityY = -1;
+        move.x = 0;
+        move.y = -1;
     }
-    else if(e.code =="ArrowLeft" && velocityX !=1)
+    else if(e.code === 'ArrowDown' && move.y != -1)
     {
-        velocityX = -1;
-        velocityY = 0;
+        move.x = 0;
+        move.y = 1;
     }
-    if(e.code =="ArrowDown" && velocityY !=-1)
+    else if(e.code === 'ArrowLeft' && move.x != 1)
     {
-        velocityX = 0;
-        velocityY = 1;
+        move.x = -1;
+        move.y = 0;
     }
-    if(e.code =="ArrowRight" && velocityX !=-1)
+    else if(e.code === 'ArrowRight' && move.x != -1)
     {
-        velocityX = 1;
-        velocityY = 0;
+        move.x = 1;
+        move.y = 0;
     }
+}
+
+//Food Co-ordinates
+function foodCO()
+{
+    food.x = getRandom(cols) * __square;
+    food.y = getRandom(rows) * __square;
+}
+
+//Util
+function getRandom(max)
+{
+    return Math.floor(Math.random()*max);
 }

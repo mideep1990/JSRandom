@@ -1,45 +1,23 @@
-/*Pass By Value Vs 
-Pass By Reference 
-in javascript*/
 
-/*var a = 20
-function update(temp)
-{
-    temp = 30
-}
+/*
+1 - Download and utilize in Script tag
+2 - CDN link in script tag
+<script type = "text/JavaScript" 
+src = "https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js">
+</script>
+3 - npm i --save lodash
+4 - use require var _ = require('lodash');
+*/
 
-update(a)
-console.log(a)
+var users = [ 1, 24, 35, 4 ];
 
+let res = users.reduce(function (sum,n){
+    return sum + n
+},0)
 
+console.log(res);
 
-
-
-
-
-var a = [20]
-function update(temp)
-{
-    temp[0] = 30
-}
-
-update(a)
-console.log(a)*/
-
-
-
-
-
-
-
-
-
-var a = {val : 20}
-function update(temp)
-{
-    temp.val = 30
-}
-
-update(a)
-console.log(a)
-
+let resL = _.reduce(users, function(sum, n) {
+    return sum + n;
+  }, 0);
+  console.log(resL);

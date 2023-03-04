@@ -3,7 +3,7 @@ window.onload = function()
 {
     intID = setInterval(ShowBeats,1000)   
 }
-let count = 65
+let count = 0
 var ShowBeats = function ()
 {
     const audio1 = document.querySelector("#hbt");

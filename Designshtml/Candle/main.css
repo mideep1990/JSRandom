@@ -1,0 +1,78 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: black;
+}
+.candleWrap{
+    height:90vh;
+    width:90vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.candleBody{
+    height:90vh;
+    width:50vw;
+    align-items: center;
+    justify-content: flex-end;
+    border-bottom:10px solid white;
+    display:flex ;
+    flex-direction: column;
+}
+.stick{
+    width:80px;
+    height:160px;
+    background: linear-gradient(
+        rgb(5, 161, 156),
+        rgb(20, 208, 202),
+        rgb(8, 147, 142),
+        rgb(15, 107, 104),
+        rgb(4, 128, 123)
+    );
+}
+.stick::after{
+    content: "";
+    position: absolute;
+    background:radial-gradient(
+    rgb(226, 192, 57),
+    rgb(183, 34, 34),
+    rgb(3, 53, 53),
+    rgb(8, 107, 107)
+    );
+    width:80px;
+    height:20px;
+    border-radius:50%;
+    top:130px
+}
+.thread{
+    width:3px;
+    height:20px;
+    background: linear-gradient(
+        rgb(205, 40, 40),
+        rgb(163, 163, 163),
+        rgb(80, 80, 80),
+        rgb(205, 40, 40)
+    );
+    z-index: 10;
+}
+.fire{
+    position: absolute;
+    width:40px;
+    height:90px;
+    background: linear-gradient(
+        rgb(225, 162, 151) 50%,
+        rgb(206, 99, 99),
+        rgb(203, 134, 37,.4)
+    );
+    border-radius:50% 50% 30% 30%;
+    top:35px;
+    animation: moveFire alternate-reverse 1s linear infinite;
+
+}
+
+@keyframes moveFire {
+    0%{ transform:rotateZ(5deg)}
+    100%{ transform:rotateZ(-5deg)}
+}

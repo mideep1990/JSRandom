@@ -1,0 +1,110 @@
+body{
+    width:100%;
+    height:90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+button{
+    background-color: white;
+    color:black;
+    border:none;
+    outline: none;
+    border-radius:2px;
+    padding:.7rem 1rem;
+    font-weight: bold;
+    cursor:pointer;
+    width:200px;
+    height:50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index:9;
+    overflow: hidden;
+    box-shadow:1px 1px 10px 1px gray
+}
+button:is(:hover){
+    animation: slow 2s forwards
+}
+#openBox{
+    display: none;
+    width:30px;
+    height:30px;
+    background-size: 70% 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#closedBox{
+    display: none;
+    width:30px;
+    height:30px;
+    background-image: url('https://img.icons8.com/ios/50/null/cardboard-box.png');
+    background-size: 70% 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin-right:145px;
+    z-index:10
+}
+#buttontext{
+    display: block;
+}
+.tick{
+  display:flex;
+  flex-direction:row;
+  align-items:center
+}
+.tick img{
+  width:20px;
+  height:20px;
+}
+.tick i{
+  font-style:normal;
+}
+#truck{
+    display: none;
+    min-width:60px;
+    height:50px;
+    background-image: url('https://img.icons8.com/color/48/null/truck--v1.png');
+    animation: truck 5s forwards;
+    background-repeat: no-repeat;
+    margin-left:auto;
+    z-index:11
+}
+
+
+@keyframes slow {
+    20% {   outline: 3px solid white;
+            border:4px solid black;
+         }
+    100% {  outline: 3px solid white;
+            border:4px solid black;
+         }
+}
+@keyframes truck {
+    from {
+        margin-right:-70px;
+    }
+    to {
+        margin-right:75px;
+    }
+}
+@keyframes truckAdv {
+    from {
+        margin-right:75px;
+    }
+    to {
+        margin-right:-70px;
+    }
+}
+@keyframes closedBox {
+    from {
+        margin-bottom:0px;
+    }
+    to {
+        margin-bottom:15px;
+        margin-left:55px;
+    }
+}

@@ -1,0 +1,10 @@
+.para span{
+    display: block;
+    opacity: 0;
+    animation:show 0.5s forwards 0s;
+    color:black;
+}
+@keyframes show {
+    from { transform: translateY(20px);}
+    to { opacity: 1;transform: none;}
+}

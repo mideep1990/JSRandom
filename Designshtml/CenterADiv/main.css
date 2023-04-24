@@ -1,0 +1,35 @@
+body{
+    width:99%;
+    height:90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section{
+    display: flex;
+    background-color: rgb(15, 122, 175);;
+    width:45%;
+    height:25%;
+    animation: box 10s linear;
+}
+div{
+    background-color: aliceblue;
+    border-radius:5px;
+    width:30px;
+    height: 30px;
+    display: block;
+    margin:.5rem;
+}
+
+
+
+
+
+section{
+  display: flex;
+}
+
+@keyframes box {
+    from {}
+    to {justify-content: center;}
+}

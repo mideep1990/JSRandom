@@ -1,0 +1,74 @@
+body{
+    display: flex;
+    width:98%;
+    height:90vh;
+    align-items: center;
+    justify-content: center;
+}
+.wrap{
+    width:400px;
+    height:400px;
+    background-image:linear-gradient(to top right, #43389F 0%, #4ec6ca 100%);
+    border-radius:4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+._top,._mid,._bot{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: "Courier New", "Courier", sans-serif;
+    color:white;
+}
+._top{
+    margin-bottom:10px;
+    margin-left:30px
+}
+.one{
+    display: flex;
+}
+.one_h,.one_b{
+    background-color: white;
+    border-radius:4px;
+    display: block;
+}
+.one_h{
+    height:35px;
+    width:20px;
+    transform: rotate(55deg) translateX(3px) translateY(-3px);
+    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2);
+    z-index:8
+} 
+.one_b{
+    height:100px;
+    width:22px;
+    z-index:9;
+    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2);
+}
+.circle{
+    width:50px;
+    height:50px;
+    border-radius:100%;
+    border:1.5rem solid white;
+    box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.2);
+}
+.circle_1{
+    transform: translateX(-10px);
+    z-index:5;
+}
+.circle_2{
+    transform: translateX(-25px);
+    z-index:4;
+}
+._mid{
+    font-size:5rem;
+    font-weight: bold;
+    height:50px;
+}
+._bot{
+    font-size:1.5rem;
+    font-weight: bold;
+}

@@ -1,0 +1,124 @@
+body{
+    display: flex;
+    width:98%;
+    height:90vh;
+    align-items: center;
+    justify-content: center;
+}
+.wrap{
+    width:400px;
+    height:400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    background: #3FAF82;
+    border-radius: 4px;
+}
+
+.barWarp{
+    width:80px;
+    height:60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:.9rem;
+    cursor: pointer;
+}
+.bar{
+    display: block;
+    width:90px;
+    height:8px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.active .b1{
+    animation: bar-1 .7s forwards ease-in-out;
+}
+.active .b2{
+    animation: bar-2 .7s forwards ease-in-out;
+}
+.active .b3{
+    animation: bar-3 .7s forwards ease-in-out;
+}
+
+.Notactive .b1{
+    animation: --bar-1 .7s forwards ease-in-out;
+}
+.Notactive .b2{
+    animation: --bar-2 .7s forwards ease-in-out;
+}
+.Notactive .b3{
+    animation: --bar-3 .7s forwards ease-in-out;
+}
+
+
+@keyframes bar-1 {
+    0% {
+        transform: translate3d(0,0,0) rotate(0);
+    }
+    50% {
+        transform: translate3d(0,1.4rem,0) rotate(0);
+    }
+    100% {
+        transform: translate3d(0,1.4rem,0) rotate(135deg);
+    }
+}
+@keyframes --bar-1 {
+    0% {
+        transform: translate3d(0,1.4rem,0) rotate(135deg);
+    }
+    50% {
+        transform: translate3d(0,1.4rem,0) rotate(0);
+    }
+    100% {
+        transform: translate3d(0,0,0) rotate(0);
+    }
+}
+
+@keyframes bar-2 {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+@keyframes --bar-2 {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes bar-3 {
+    0% {
+        transform: translate3d(0,0,0) rotate(0);
+    }
+    50% {
+        transform: translate3d(0,-1.4rem,0) rotate(0);
+    }
+    100% {
+        transform: translate3d(0,-1.4rem,0)  rotate(45deg);
+    }
+}
+@keyframes --bar-3 {
+    0% {
+        transform: translate3d(0,-1.4rem,0) rotate(45deg);
+    }
+    50% {
+        transform: translate3d(0,-1.4rem,0) rotate(0);
+    }
+    100% {
+        transform: translate3d(0,0,0)  rotate(0);
+    }
+}

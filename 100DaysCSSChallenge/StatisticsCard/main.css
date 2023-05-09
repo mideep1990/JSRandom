@@ -1,0 +1,276 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+body{
+    display: flex;
+    width:98%;
+    height:90vh;
+    align-items: center;
+    justify-content: center;
+}
+section{
+    width:400px;
+    height:400px;
+    box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+    background: #42A7A1;
+    border-radius:4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.wrap{
+    width:70%;
+    display: flex;
+    flex-direction: column;
+    border-radius:inherit;
+}
+.header{
+    width:100%;
+    height:60px;
+    background: #F1BA64;
+    display: flex;
+    flex-direction: row;
+    border-radius:4px 4px 0 0;
+    align-items: center;
+    justify-content: center;
+}
+.headerleft{
+    display: flex;
+    flex-direction: column;
+    color:white;
+    margin-left:14px;
+}
+.headerright{
+    margin-left:auto;
+    display: flex;
+    flex-direction: column;
+    color:white;
+    margin-right: 14px;
+}
+.bigFont{
+    font-weight: 600;
+    font-size: 14px;
+    font-family: "Open Sans", Helvetica, sans-serif;
+}
+.smallFont{
+    font-size:11px;
+    font-weight: 400;
+    font-family: "Open Sans", Helvetica, sans-serif;
+}
+.graphBox{
+    width:100%;
+    height:160px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    border-radius:0 0 4px 4px;
+    align-items: center;
+    justify-content: center;
+}
+.param{
+    height:20px;
+    width:95%;
+}
+.param div{
+    width:100%;
+    font-size:9px;
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row;
+}
+.line-red{
+    width:15px;
+    height:4px;
+    background-color: #FA7373;
+    border-radius:5px;
+}
+.line-blue{
+    width:15px;
+    height:4px;
+    background-color: #7BA2FF;
+    border-radius:5px;
+}
+.x-lines{
+    height:90px;
+    width:95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 2.3rem;
+}
+.x-lines span{
+    display: flex;
+    width:96%;
+    background-color: #ececec;
+    height:1px;
+}
+.Draw{
+    position: absolute;
+    width: 260px;
+    height:80px;
+}
+.redG SVG,
+.blueG SVG{
+    top:0;
+    left:0;
+    position: absolute;
+}
+.redG polyline{
+    top:0;
+    left:0;
+    position: absolute;
+    fill: none;
+    stroke:#FA7373;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+.blueG polyline{
+    top:0;
+    left:0;
+    position: absolute;
+    fill: none;
+    stroke: #7BA2FF;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+.days{
+    height:20px;
+    width:95%;
+    display: flex;
+}
+.days span{
+    flex:1;
+    font-size: 9px;
+    color: #949494;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+.rc{
+    position:absolute;
+    width:7px;
+    height:7px;
+    background-color: #FA7373;
+    border-radius:50%;
+    cursor:pointer !important;
+    z-index:12;
+}
+.rc:hover .tooltip{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+    transition: transform 1s,opacity 1s;
+} 
+
+.rc1{
+    top:45px;
+    left: 2px;
+}
+.rc2{
+    top:9px;
+    left: 45px;
+}
+.rc3{
+    top:19px;
+    left: 85px;
+}
+.rc4{
+    top:9px;
+    left: 125px;
+}
+.rc5{
+    top:35px;
+    left: 171px;
+}
+.rc6{
+    top:44px;
+    left: 207px;
+}
+.rc7{
+    top:17px;
+    left: 245px;
+}
+.tooltip{
+    position: absolute;
+    display: flex;
+    width:30px;
+    height:30px;
+    align-items: center;
+    justify-content: center;
+    border-radius:4px;
+    color:white;
+    margin-top:-38px;
+    margin-left:-10px;
+    font-size:.8rem;
+    font-weight:bold;
+    font-family: 'Courier New', Courier, monospace;
+    transform: translate3d(0,20px,0);
+    opacity: 0;
+}
+.tooltip::after{
+    position: absolute;
+    display: block;
+    content: '';
+    height: 6px;
+    width: 6px;
+    left: 50%;
+    margin-left: -3px;
+    bottom: -3px;
+    transform: rotate(45deg);
+}
+.RToolTip,.RToolTip::after{
+    background-color: #FA7373;
+}
+.BToolTip,.BToolTip::after{
+    background-color: #7BA2FF;
+}
+
+.bc{
+    position:absolute;
+    width:7px;
+    height:7px;
+    background-color: #7BA2FF;
+    border-radius:50%;
+    cursor:pointer !important;
+    z-index:12;
+}
+.bc:hover .tooltip{
+    opacity: 1;
+    transform: translate3d(0,0,0);
+    transition: transform 1s,opacity 1s;
+}
+
+.bc1{
+    top:58px;
+    left: 2px;
+}
+.bc2{
+    top:47px;
+    left: 45px;
+}
+.bc3{
+    top:61px;
+    left: 85px;
+}
+.bc4{
+    top:52px;
+    left: 124px;
+}
+.bc5{
+    top:58px;
+    left: 170px;
+}
+.bc6{
+    top:70px;
+    left: 206px;
+}
+.bc7{
+    top:61px;
+    left: 246px;
+}
+

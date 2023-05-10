@@ -16,9 +16,12 @@ function callWorker()
     for(let it = 0 ;it<subE.length;it++){
         data.push(subE[it].value)
     }
+    
     myWorker.postMessage(data);
     myWorker.onmessage = function(e) {
         document.getElementById('res').innerText = e.data;
         console.log('Message received from worker');
       }
 }
+
+callWorker()

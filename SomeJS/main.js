@@ -1,5 +1,7 @@
-
-
-const iplTeams = ["CSK", "RCB", "MI", "GT"];
-iplTeams.unshift('LSG');
-console.log(iplTeams)
+console.log('Timer')
+console.time('timer1')
+for(let i =0;i<4;i++)
+{
+    console.timeLog('timer1')
+}
+console.timeEnd('timer1')

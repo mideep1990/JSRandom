@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
+    <title>Day # 6</title>
+</head>
+<body onload="onload()">
+    <section>
+        <div class="wrap">
+            <div class="mainNoti" id="MainNotiID">
+                <div class="header">
+                        <div class="no-Search" id="no-Search-id">
+                        <div class="menuIcon" id="MenuIconID" onclick="ToggleMenu()">
+                            <span>
+                                <span class="barTop"></span>
+                                <span class="barCircle"></span>
+                            </span>
+                            <span class="barBottom"></span>
+                        </div>
+                        <h4>Notifications</h4>
+                        </div>
+                        <div class="searchField" id="searchFieldID">
+                            <input type="text" class="searchIn" placeholder="Search ..."/>
+                        </div>
+                        <span class="searchicon" onclick="ToggleSearch()">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </span>
+                </div>
+                <div class="notificationContent">
+                    <div class="TimeLine1 TimeLine">
+                        <span class="time">9:24 AM</span>
+                        <span class="text"><b>John Walker</b> posted a photo on your wall.</span>
+                    </div>
+                    <div class="TimeLine2 TimeLine">
+                        <span class="time">8:24 AM</span>
+                        <span class="text"><b>Alice Parker</b> commented your last post.</span>
+                    </div>
+                    <div class="TimeLine3 TimeLine">
+                        <span class="time">Yesterday</span>
+                        <span class="text"><b>Luke Wayne</b> added you as friend.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="menu" id="MenuBoxID">
+                <ul>
+                    <li><i class="fa fa-dashboard"></i>&nbsp;&nbsp;Dashboard</li>
+			        <li><i class="fa fa-user"></i>&nbsp;&nbsp;Profile</li>
+			        <li><i class="fa fa-bell"></i>&nbsp;&nbsp;Notifications</li>
+			        <li><i class="fa fa-comments"></i>&nbsp;&nbsp;Messages</li>
+			        <li><i class="fa fa-gear"></i>&nbsp;&nbsp;Settings</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

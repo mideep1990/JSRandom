@@ -108,20 +108,28 @@ section{
     margin-right:20px;
     color: #B2DAFF;
     cursor: pointer;
+    z-index:10
 }
 #searchFieldID{
-    width:90%;
-    display: none;
+    position: absolute;
+    width:270px;
     height:60px;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 #searchFieldID input{
     width:75%;
-    padding:.5rem 1rem;
+    padding:.6rem 1rem;
     border-radius:20px;
     border:0px;
     outline: 0px;
+}
+.showTextField{
+    animation:textFieldAnim forwards .5s ease-in-out 
+}
+.hideTextField{
+    animation:textFieldAnim-1 forwards .5s ease-in-out 
 }
 
 .notificationContent{
@@ -232,4 +240,27 @@ section{
         transform: translate3d(0,0,0);
         opacity: 1;
     }
+}
+
+@keyframes textFieldAnim {
+    0%{
+        transform: translate3d(20px,0,0);
+        opacity: 0;
+    }
+    100%{
+        transform: translate3d(0,0,0);
+        opacity: 1;
+    }
+}
+
+@keyframes textFieldAnim-1 {
+    0%{
+        transform: translate3d(0,0,0);
+        opacity: 1;
+    }
+    100%{
+        transform: translate3d(20px,0,0);
+        opacity: 0;
+    }
+
 }

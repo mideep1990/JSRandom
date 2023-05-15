@@ -1,7 +1,7 @@
 function onload()
 {
     const SearchFieldEl = document.getElementById('searchFieldID')
-    SearchFieldEl.style.display = 'none'
+    SearchFieldEl.style.opacity = 0
 }
 function ToggleMenu()
 {
@@ -25,15 +25,16 @@ function ToggleSearch()
 {
     const headerEl = document.getElementById('no-Search-id')
     const SearchFieldEl = document.getElementById('searchFieldID')
-    if(SearchFieldEl.style.display === 'none')
+    if(SearchFieldEl.classList.contains('showTextField'))
     {
-        SearchFieldEl.style.display = 'flex'
-        headerEl.style.display = 'none'
+        headerEl.style.opacity = 1
+        SearchFieldEl.classList.remove('showTextField')
+        SearchFieldEl.classList.add('hideTextField')
     }
     else
     {
-        SearchFieldEl.style.display = 'none'
-        headerEl.style.display = 'flex'
-    }
-    
+        headerEl.style.opacity = 0
+        SearchFieldEl.classList.remove('hideTextField')
+        SearchFieldEl.classList.add('showTextField')
+    }    
 }

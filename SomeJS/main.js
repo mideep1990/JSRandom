@@ -1,7 +1,8 @@
-console.log('Timer')
-console.time('timer1')
-for(let i =0;i<4;i++)
-{
-    console.timeLog('timer1')
-}
-console.timeEnd('timer1')
+console.log("width : ",screen.width)
+console.log("height : ",screen.height)
+console.log("availwidth : ",screen.availWidth)
+console.log("availheight : ",screen.availHeight)
+console.log("orientation : ",screen.orientation)
+console.log("pixelDepth : ",screen.pixelDepth)
+console.log("colorDepth : ",screen.colorDepth)
+

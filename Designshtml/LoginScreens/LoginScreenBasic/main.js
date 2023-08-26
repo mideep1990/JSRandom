@@ -49,18 +49,29 @@ function togglePswdView()
         pwd.type = 'password'
         list.remove('fa-eye')
         list.add('fa-eye-slash')
-        image.src = 'lock.gif'
+        image.src = 'lock.png'
     }
 }
 
 function checkFormFill(){
     let enteredEmail = email.value
     let enteredPwd = pwd.value
-    console.log(enteredEmail)
-    console.log(enteredPwd)
     if(enteredEmail && enteredPwd)
     {
         resetBut.removeAttribute('inert')
         loginBut.removeAttribute('inert')
+    }
+}
+
+function login()
+{
+    let enteredEmail = email.value
+    let enteredPwd = pwd.value
+    if(enteredEmail && enteredPwd)
+    {
+        resetBut.removeAttribute('inert')
+        loginBut.removeAttribute('inert')
+        image.src = 'lock.gif'
+        //API Call for Login
     }
 }

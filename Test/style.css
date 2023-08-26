@@ -1,0 +1,7 @@
+:is(div.Stylediv) a
+{
+    color:red
+}
+div a{
+    color:blue
+}

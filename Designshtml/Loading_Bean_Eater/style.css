@@ -1,0 +1,64 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width:100%
+}
+.Eater{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background-color: rgb(15, 165, 103);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.mouth{
+    width: 0;
+	height: 0;
+	border-top: 25px solid transparent;
+	border-right: 50px solid #ffffff;
+	border-bottom: 25px solid transparent;
+    animation: eat 0.5s linear .5s infinite alternate;
+}
+
+@keyframes eat {
+    100%{
+        border-top: 0px solid transparent;
+        border-right: 50px solid #ffffff;
+        border-bottom: 0px solid transparent;
+    }
+}
+
+.BeansWrap{
+    width:100px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap:1rem
+}
+.bean{
+    width:10px;
+    height: 10px;
+    background-color: rgb(15, 165, 103);;
+    border-radius:50%;
+    animation: moveBeans 1s linear infinite;
+    transform-origin: 60px 60px;
+}
+
+@keyframes moveBeans {
+    0%{
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    30%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(-100px);
+        opacity: 1;
+    }
+}

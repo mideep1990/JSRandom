@@ -1,0 +1,114 @@
+body{
+    display: flex;
+    width:98%;
+    height:90vh;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+}
+.wrap{
+    width:400px;
+    height:400px;
+    border-radius:4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #1f1f1f;
+}
+.face{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom:1rem
+}
+.face span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.face span img{
+    width:50px;
+    height:50px;
+    border:.5px solid rgb(70, 70, 70);
+    border-radius:50%
+}
+.formWrap{
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+}
+.formWrap div{
+    display: flex;
+    flex-direction: column;
+}
+.wrapInput{
+    display: flex;
+    border:.5px solid rgb(210, 210, 210);
+    width:200px;
+    align-items: center;
+    padding:.5rem
+}
+input[type='text'],
+input[type='password']{
+    padding:.1rem;
+    background: none;
+    width:190px;
+    outline: none;
+    border:none;
+    color:white
+}
+label{
+    color:rgb(193, 193, 193);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:.9rem;
+}
+.wrapInput:has(input[type='text']:focus),
+.wrapInput:has(input[type='password']:focus){
+    box-shadow: 1px 1px 10px 5px rgb(122, 122, 122);
+}
+#em_i,
+#pw_h_s{
+    color:white
+}
+#pw_h_s{
+    cursor: pointer;
+}
+#em_i.fa-user{ color:rgb(110, 110, 110)}
+#em_i.fa-check{ color:rgb(127, 235, 127)}
+#em_i.fa-close{ color:red}
+#pw_h_s.fa-eye-slash{color:rgb(110, 110, 110)}
+#pw_h_s.fa-eye{color:yellow}
+.btnGrp{
+    display: flex;
+    flex-direction: row !important;
+    gap:.2rem;
+    margin-top:.7rem;
+    justify-content: flex-end;
+}
+button{
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    padding:.7rem 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    color:white;
+}
+.login{
+    background:linear-gradient(rgb(21, 191, 213),rgb(27, 107, 154),rgb(30, 180, 199));
+    border-radius:3px;
+}
+.login:hover{
+    box-shadow: 1px 1px 10px 5px rgb(86, 203, 236);
+}
+.reset{
+    background:linear-gradient(rgb(130, 130, 130),rgb(104, 104, 104),rgb(185, 185, 185));
+    border-radius:3px;
+}
+.reset:hover{
+    box-shadow: 1px 1px 10px 5px rgb(122, 122, 122);
+}
+[inert]{
+    opacity: .4;
+    pointer-events: none;
+}

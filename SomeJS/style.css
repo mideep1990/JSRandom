@@ -1,0 +1,11 @@
+.showA{
+    width:300px;
+    display:flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.showA h3{
+    width:220px;
+    border-bottom:2px solid gray
+}

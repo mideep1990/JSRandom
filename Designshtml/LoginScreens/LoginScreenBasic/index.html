@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Basic</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <section class="wrap">
+        <div class="face">
+            <span>
+                <img id="image" src="lock.gif">
+            </span>
+        </div>
+        <div class="formWrap">
+            <div>
+                <label for="em">Email ID</label>
+                <span class="wrapInput">
+                 <input type="text" id="em" onblur="checkEmail()"/>
+                 <i class="fa fa-user" aria-hidden="true" id="em_i"></i>
+                </span>
+            </div>
+            <div>
+                <label for="pw">Password</label>
+                <span class="wrapInput">
+                 <input type="password" id="pw" onkeypress="checkFormFill()">
+                 <i class="fa fa-eye-slash" aria-hidden="true" id="pw_h_s" onclick="togglePswdView()" ></i>
+                </span>
+
+            </div>
+            <div class="btnGrp">
+                <button id="resetBut" class="reset" type="reset" inert>Reset</button>
+                <button id="loginBut" class="login" onclick="login()" inert>Login</button>
+            </div>
+        </div>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,4 +1,11 @@
-const curr = new Date();
-console.log(curr.toLocaleString())
-console.log(curr.toLocaleString('en-GB', { timeZone: 'Africa/Cairo' }));
-console.log(curr.toLocaleString('ko-KR', { timeZone: 'UTC' }));
+const el = document.getElementsByTagName("div")[0]
+el.addEventListener(
+    'pointerdown',function(){
+        console.log("Pointer Down")
+    }
+)
+el.addEventListener(
+    'pointerup',function(){
+        console.log("Pointer Up")
+    }
+)

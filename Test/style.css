@@ -1,7 +1,24 @@
-:is(div.Stylediv) a
-{
-    color:red
+section{
+    width: 300px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
 }
-div a{
-    color:blue
+.para{
+    width:300px;
+    height: 250px;
+    scroll-snap-align: center;
+    display: inline-block;
+}
+.p1{
+    background-color: antiquewhite;
+}
+.p2{
+    background-color: aqua;
+}
+div{
+    width:200px;
+    height:200px;
+    border:1px solid red;
 }

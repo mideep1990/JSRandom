@@ -1,0 +1,80 @@
+body{
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+    height:90vh
+}
+section{
+    display: flex;
+    width:400px;
+    height:400px;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.nail{
+    border-radius:50%;
+    background-color: antiquewhite;
+    height:9px;
+    width:9px;
+}
+.Pendulum-Container{
+    transform: rotate(20deg);
+    animation-name: __swing-container;
+    animation-delay: 2.33s;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform-origin: 50% 0%;
+    animation-timing-function: ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.Pendulum-Body{
+    transform: rotate(-20deg);
+    animation-name: __swing;
+    animation-delay: 3s;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform-origin: 50% 0%;
+    animation-timing-function: ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.connector{
+    border:.1px solid white;
+    width:.1px;
+    height:130px;
+}
+.Ball{
+    border-radius:50%;
+    width:40px;
+    height:40px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 20px 40px 10px rgb(137, 137, 137);
+}
+
+
+@keyframes __swing-container {
+    0% {
+      transform: rotate(20deg);
+    }
+    100% {
+      transform: rotate(-40deg);
+    }
+  }
+
+@keyframes __swing {
+    0% {
+        transform: rotate(-20deg);
+      }
+      100% {
+        transform: rotate(40deg);
+      }
+}

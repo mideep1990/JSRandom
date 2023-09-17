@@ -20,5 +20,10 @@ section{
 div{
     width:200px;
     height:200px;
-    border:1px solid red;
+    background:red
+}
+@when media(min-width: 108px) {
+    div{
+        background:blue
+    }
 }

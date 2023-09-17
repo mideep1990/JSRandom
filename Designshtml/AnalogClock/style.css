@@ -1,0 +1,148 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    width:100%;
+    height: 80vh;
+}
+section{
+    display: flex;
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+select{
+    padding:.7rem;
+}
+.wrap{
+    height: 300px;
+    width:100%;
+}
+.ClockSurface{
+    display: flex;
+    outline: 8px solid rgb(222, 222, 222);
+    border:5px solid black;
+    height:300px;
+    width:100%;
+    border-radius:50%;
+    z-index: -10;
+    box-shadow:1px 1px 5px 10px rgb(201, 201, 201)
+}
+.marks{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+}
+.marks div{
+    font-size:2rem;
+    font-weight: 400;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#N12{
+  margin-left:45%;
+  margin-top:.5%;
+}
+#N1{
+    margin-left:12%;
+    margin-top:5%;
+  }
+#N2{
+    margin-left:10%;
+    margin-top:17%;
+  }
+#N3{
+    margin-left:5%;
+    margin-top:40%;
+  }
+
+#N4{
+    margin-left:-12%;
+    margin-top:62%;
+  }
+#N5{
+    margin-left:-20%;
+    margin-top:80%;
+  }
+#N6{
+    margin-left:-27%;
+    margin-top:87%;
+  }
+#N7{
+    margin-left:-29%;
+    margin-top:80%;
+  }
+#N8{
+    margin-left:-25%;
+    margin-top:60%;
+  }
+#N9{
+    margin-left:-10%;
+    margin-top:39%;
+  }
+#N10{
+    margin-left:0%;
+    margin-top:20%;
+  }
+#N11{
+    margin-left:5%;
+    margin-top:5%;
+  }
+.pins{
+    width:80%;
+    height:80%;
+    display: flex;
+    margin-left:15%;
+    margin-top:-95%;
+    z-index:1000;
+    align-items: center;
+    justify-content: center;
+}
+.pinCenter{
+    width:20px;
+    height:20px;
+    background-color: black;
+    border-radius: 50%;
+    z-index:20;
+    position: absolute;
+    margin-left:0%;
+    margin-top:0%
+}
+.hr{
+    position: absolute;
+    width:5px;
+    background-color: rgb(9, 84, 84);
+    height:40px;
+    margin-top:6%;
+    z-index:-4;
+    margin-left:0%;
+    transform-origin: 100% 0%;
+    border-radius:0 0 80px 80px;
+}
+.min{
+    position: absolute;
+    width:5px;
+    background-color: rgb(96, 18, 130);
+    height:60px;
+    margin-top:8%;
+    z-index:-4;
+    margin-left:0%;
+    transform-origin: 100% 0%;
+    border-radius:0 0 80px 80px;
+}
+.sec{
+    position: absolute;
+    width:2px;
+    background-color: rgb(205, 18, 18);
+    height:70px;
+    margin-top:10%;
+    z-index:-4;
+    margin-left:-.5%;
+    transform-origin: 100% 0%;
+    animation: __sec 60s 0s infinite;
+}
+
+@keyframes __sec {
+    from {transform: rotate(0deg);}
+    to{transform: rotate(360deg);}
+}

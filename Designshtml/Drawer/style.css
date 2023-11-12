@@ -1,0 +1,39 @@
+.drawerWrap{
+    display: flex;
+    width:200px;
+    height:200px;
+    position: fixed;
+    top:20vh;
+    right:-165px;
+    display: flex;
+    flex-direction: row;
+    border:2px solid rgb(49, 226, 232);
+    background-color: rgb(230, 255, 255);
+    transition: all 1s ease-in-out;
+}
+.openDrawer
+{
+    right:0px;
+    transition: all 1s ease-in-out;
+}
+.drawerHeading{
+    width:30px;
+    padding:.5rem;
+    background-color: rgb(49, 226, 232);
+    cursor: pointer;
+}
+.drawerHeading h4{
+    display: flex;
+    transform-origin: 0 0;
+    transform: rotate(-90deg);
+    width:130px;
+    position: absolute;
+    top: 140px;
+    left: 12px;
+}
+.drawerContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:1rem;
+}

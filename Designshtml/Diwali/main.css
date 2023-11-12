@@ -1,0 +1,75 @@
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: black;
+}
+.DiyaWrap{
+    height:40vh;
+    width:90vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.DiyaBody{
+    width:50vw;
+    align-items: center;
+    justify-content: flex-end;
+    display:flex ;
+    flex-direction: column;
+}
+.DiyaBase{
+    width:280px;
+    height:50px;
+    border-bottom:80px solid rgb(121, 78, 9);
+    border-radius:0% 0% 100% 100%;
+}
+.DiyaBase::after{
+    content: "";
+    position: absolute;
+    background:radial-gradient(
+    rgb(226, 192, 57),
+    rgb(183, 34, 34),
+    rgb(3, 53, 53),
+    rgb(8, 107, 107)
+    );
+    width:280px;
+    height:40px;
+    border-radius:50%;
+    top:303px
+}
+.thread{
+    width:3px;
+    height:20px;
+    background: linear-gradient(
+        rgb(205, 40, 40),
+        rgb(163, 163, 163),
+        rgb(80, 80, 80),
+        rgb(205, 40, 40)
+    );
+    z-index: 19;
+    position:absolute;
+    top:300px;
+}
+.fire{
+    position: absolute;
+    width:40px;
+    height:90px;
+    background: linear-gradient(
+        rgb(225, 162, 151) 50%,
+        rgb(206, 99, 99),
+        rgb(203, 134, 37,.4)
+    );
+    border-radius:50% 50% 30% 30%;
+    top:215px;
+    z-index: 13;
+    box-shadow: 1px 10px 70px rgb(236, 150, 51);
+    animation: moveFire alternate-reverse 1s linear infinite;
+
+}
+
+@keyframes moveFire {
+    0%{ transform:rotateZ(5deg)}
+    100%{ transform:rotateZ(-5deg)}
+}

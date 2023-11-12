@@ -1,7 +1,5 @@
 
-//Explicit 
-
-(function(){
- console.log("test");
- let i =0;
-})();
+fun()
+function fun(){
+  console.log('Normal Function !!!')
+}
